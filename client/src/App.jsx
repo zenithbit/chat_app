@@ -1,16 +1,17 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Chat from "./pages/chat";
-import Login from "./pages/login";
-import Register from "./pages/register";
+import Chat from "./pages/Chat";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 import NavBar from "./components/navbar";
 import { useContext } from "react";
-import { AuthContext } from "./contexts/auth-context";
+import { AuthContext } from "./contexts/AuthContext";
+import { ChatContextProvider } from "./contexts/ChatContext";
 function App() {
   const { user } = useContext(AuthContext);
   return (
-    <>
+    <ChatContextProvider user={user}>
       <NavBar />
       <Container className="text-secondary">
         <Routes>
@@ -20,7 +21,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Container>
-    </>
+    </ChatContextProvider>
   );
 }
 

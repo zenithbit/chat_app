@@ -21,7 +21,7 @@ export const AuthContextProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    const user = localStorage.getItem("User");
+    const user = localStorage.getItem("user");
     setUser(JSON.parse(user));
   }, []);
 
@@ -39,7 +39,7 @@ export const AuthContextProvider = ({ children }) => {
       setIsRegisterLoading(true);
       setRegisterError(null);
       const response = await postRequest(
-        `${baseUrl}/api/users/register`,
+        `${baseUrl}/users/register`,
         JSON.stringify(registerInfo)
       );
 
@@ -65,7 +65,7 @@ export const AuthContextProvider = ({ children }) => {
       setIsLoginLoading(true);
       setLoginError(null);
       const response = await postRequest(
-        `${baseUrl}/api/users/login`,
+        `${baseUrl}/users/login`,
         JSON.stringify(loginInfo)
       );
       setIsLoginLoading(false);
