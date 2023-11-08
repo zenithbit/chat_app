@@ -12,7 +12,7 @@ require("dotenv").config();
 app.use(express.json());
 app.use(cors());
 app.get("/", (req, res) => {
-  res.send("Express on Vercel");
+  res.json({ success: "Express on Vercel" });
 });
 app.use("/api/users", userRoute);
 app.use("/api/chats", chatRoute);
