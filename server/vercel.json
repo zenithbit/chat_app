@@ -6,7 +6,11 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [{ "src": "/(chat|message|user)", "dest": "/routes/[1]Route.js" }],
+  "routes": [
+    { "src": "/chat", "dest": "/routes/chatRoute.js" },
+    { "src": "/message", "dest": "/routes/messageRoute.js" },
+    { "src": "/user", "dest": "/routes/userRoute.js" }
+  ],
   "headers": [
     {
       "source": "/api/(.*)",
