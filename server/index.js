@@ -14,7 +14,9 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.json({ success: "Express on Vercel" });
 });
-app.use("/api/users", userRoute);
+app.use("/api/users", (req, res) => {
+  res.json({ success: "Express on user" });
+});
 app.use("/api/chats", chatRoute);
 app.use("/api/messages", messageRoute);
 
