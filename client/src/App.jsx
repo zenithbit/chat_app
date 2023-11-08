@@ -7,8 +7,8 @@ import { useContext } from "react";
 import { AuthContext } from "./contexts/AuthContext";
 import { ChatContextProvider } from "./contexts/ChatContext";
 import { Login } from "./pages/login.jsx";
-// import { Register } from "./pages/register.jsx";
 import { Chat } from "./pages/chat.jsx";
+import Register from "./pages/Register";
 function App() {
   const { user } = useContext(AuthContext);
   return (
@@ -17,7 +17,7 @@ function App() {
       <Container className="text-secondary">
         <Routes>
           <Route path="/" element={user ? <Chat /> : <Login />} />
-          {/* <Route path="/register" element={user ? <Chat /> : <Register />} /> */}
+          <Route path="/register" element={user ? <Chat /> : <Register />} />
           <Route path="/login" element={user ? <Chat /> : <Login />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
