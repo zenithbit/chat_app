@@ -7,8 +7,8 @@
     }
   ],
   "routes": [
-    { "src": "/api/chats", "dest": "./routes/chatRoute.js" },
-    { "src": "/api/messages", "dest": "./routes/messageRoute.js" },
-    { "src": "/api/users", "dest": "./routes/userRoute.js" }
+    { "src": "/(.*)", "dest": "./routes/chatRoute.js" },
+    { "src": "/(.*)", "dest": "./routes/messageRoute.js" },
+    { "src": "/(.*)", "dest": "./routes/userRoute.js" }
   ]
 }
