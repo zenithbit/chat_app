@@ -17,7 +17,7 @@ function App() {
       <Container className="text-secondary">
         <Routes>
           <Route path="/" element={user ? <Chat /> : <Login />} />
-          <Route path="/register" element={user ? <Chat /> : <Register />} />
+          {/* <Route path="/register" element={user ? <Chat /> : <Register />} /> */}
           <Route path="/login" element={user ? <Chat /> : <Login />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
