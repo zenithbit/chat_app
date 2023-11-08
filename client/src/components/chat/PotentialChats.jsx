@@ -4,23 +4,30 @@ import { ChatContext } from "../../contexts/ChatContext";
 
 const PotentialChats = () => {
   const { user } = useContext(AuthContext);
-  const { potentialChats, createChat } = useContext(ChatContext);
-  console.log(potentialChats);
+  const { potentialChats, createChat, onlineUsers } = useContext(ChatContext);
+
   return (
     <>
       <div className="all-users">
-        {potentialChats.map((u, index) => {
-          return (
-            <div
-              className="single-user"
-              key={index}
-              onClick={() => createChat(user._id, u._id)}
-            >
-              {u.name}
-              <span className="user-online"></span>
-            </div>
-          );
-        })}
+        {potentialChats &&
+          potentialChats.map((u, index) => {
+            return (
+              <div
+                className="single-user"
+                key={index}
+                onClick={() => createChat(user._id, u?._id)}
+              >
+                {u.name}
+                <span
+                  className={
+                    onlineUsers?.some((user) => user?.userId === u?._id)
+                      ? "user-online"
+                      : ""
+                  }
+                ></span>
+              </div>
+            );
+          })}
       </div>
     </>
   );

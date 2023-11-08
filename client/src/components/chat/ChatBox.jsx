@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Stack } from "react-bootstrap";
 import { AuthContext } from "../../contexts/AuthContext";
 import { ChatContext } from "../../contexts/ChatContext";
@@ -13,7 +13,23 @@ const ChatBox = () => {
   const { recipientUser } = useFetchRecipientUser(currentChat, user);
   const [textMessage, setTextMessage] = useState("");
 
-  console.log("text", textMessage);
+  useEffect(() => {
+    const keyDownHandler = (event) => {
+      console.log("User pressed: ", event.key);
+
+      if (event.key === "Enter") {
+        // 👇️ your logic here
+        event.preventDefault();
+        sendTextMessage(textMessage, user, currentChat?._id, setTextMessage);
+      }
+    };
+
+    document.addEventListener("keydown", keyDownHandler);
+
+    return () => {
+      document.removeEventListener("keydown", keyDownHandler);
+    };
+  }, [textMessage]);
   if (!recipientUser) {
     return (
       <p style={{ textAlign: "center", width: "100%" }}>
@@ -27,6 +43,7 @@ const ChatBox = () => {
       <p style={{ textAlign: "center", width: "100%" }}> Loading Chat ...</p>
     );
   }
+
   return (
     <Stack gap={4} className="chat-box">
       <div className="chat-header">

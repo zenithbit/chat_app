@@ -54,7 +54,6 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const logoutUser = useCallback(() => {
-    console.log('run heree')
     localStorage.removeItem("user");
     setUser(null);
   }, []);

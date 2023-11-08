@@ -7,7 +7,6 @@ export const useFetchRecipientUser = (chat, user) => {
 
   const recipientId = chat?.members.find((id) => id !== user?._id);
 
-  console.log(recipientId);
   useEffect(() => {
     const getUser = async () => {
       if (!recipientId) {
