@@ -40,3 +40,5 @@ mongoose
   .catch((error) => {
     console.log("Mongoose connect error: " + error);
   });
+
+export default app;

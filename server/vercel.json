@@ -6,9 +6,5 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
-    { "src": "/(.*)", "dest": "./routes/chatRoute.js" },
-    { "src": "/(.*)", "dest": "./routes/messageRoute.js" },
-    { "src": "/(.*)", "dest": "./routes/userRoute.js" }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
 }
