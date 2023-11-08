@@ -6,9 +6,9 @@ import NavBar from "./components/navbar";
 import { useContext } from "react";
 import { AuthContext } from "./contexts/AuthContext";
 import { ChatContextProvider } from "./contexts/ChatContext";
-import { Login } from "./pages/Login";
-import { Register } from "./pages/Register";
-import { Chat } from "./pages/Chat";
+import { Login } from "./pages/login";
+import { Register } from "./pages/register";
+import { Chat } from "./pages/chat";
 function App() {
   const { user } = useContext(AuthContext);
   return (
