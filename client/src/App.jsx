@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { AuthContext } from "./contexts/AuthContext";
 import { ChatContextProvider } from "./contexts/ChatContext";
 import { Login } from "./pages/login.jsx";
-import { Register } from "./pages/register.jsx";
+// import { Register } from "./pages/register.jsx";
 import { Chat } from "./pages/chat.jsx";
 function App() {
   const { user } = useContext(AuthContext);
