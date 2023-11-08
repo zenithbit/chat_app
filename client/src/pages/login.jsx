@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Alert, Button, Col, Form, Row, Stack } from "react-bootstrap";
 import { AuthContext } from "../contexts/AuthContext";
 
-const Login = () => {
+export const Login = () => {
   const { loginUser, loginError, loginInfo, updateLoginInfo, isLoginLoading } =
     useContext(AuthContext);
   return (
@@ -47,4 +47,3 @@ const Login = () => {
     </>
   );
 };
-export default Login;
