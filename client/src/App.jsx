@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Chat from "./pages/Chat";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Chat from "./pages/Chat.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 import NavBar from "./components/navbar";
