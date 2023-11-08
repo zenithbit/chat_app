@@ -1,4 +1,4 @@
-export const baseUrl = "http://localhost:2002/api";
+export const baseUrl = "https://chat-app-virid-iota.vercel.app/api";
 
 export const postRequest = async (url, body) => {
   const response = await fetch(url, {
