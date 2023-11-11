@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 
-.text-secondary {
+.react-input-emoji--input {
+  color: black !important;
+}
+div {
   color: white !important;
 }
 html,

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Stack } from "react-bootstrap";
 import { AuthContext } from "../../contexts/AuthContext";
 import { ChatContext } from "../../contexts/ChatContext";
@@ -13,6 +13,11 @@ const ChatBox = () => {
   const { recipientUser } = useFetchRecipientUser(currentChat, user);
   const [textMessage, setTextMessage] = useState("");
 
+  const scroll = useRef();
+
+  useEffect(() => {
+    scroll.current?.scrollIntoView({ behavior: "smooth" });
+  });
   useEffect(() => {
     const keyDownHandler = (event) => {
       console.log("User pressed: ", event.key);
@@ -60,6 +65,7 @@ const ChatBox = () => {
                     ? "message self align-self-end flex-grow-0"
                     : "message align-self-start flex-grow-0"
                 }`}
+                ref={scroll}
               >
                 <span>{message.text}</span>
                 <span className="message-footer">

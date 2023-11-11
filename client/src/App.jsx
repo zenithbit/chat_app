@@ -16,10 +16,20 @@ function App() {
       <NavBar />
       <Container className="text-secondary">
         <Routes>
-          <Route path="/" element={user ? <Chat /> : <Login />} />
-          <Route path="/register" element={user ? <Chat /> : <Register />} />
-          <Route path="/login" element={user ? <Chat /> : <Login />} />
+          <Route
+            path="/"
+            element={user ? <Navigate to="/chat" /> : <Login />}
+          />
+          <Route
+            path="/register"
+            element={user ? <Navigate to="/chat" /> : <Register />}
+          />
+          <Route
+            path="/login"
+            element={user ? <Navigate to="/chat" /> : <Login />}
+          />
           <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/chat" element={<Chat />} />
         </Routes>
       </Container>
     </ChatContextProvider>
