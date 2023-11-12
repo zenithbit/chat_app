@@ -11,13 +11,7 @@ require("dotenv").config();
 
 app.use(express.json());
 app.use(cors());
-app.get("/", (req, res) => {
-  res.json({ success: "Express on Vercel" });
-});
 
-app.get("/api", (req, res) => {
-  res.json({ success: "Express on API" });
-});
 app.use("/api/users", userRoute);
 app.use("/api/chats", chatRoute);
 app.use("/api/messages", messageRoute);
@@ -27,10 +21,6 @@ const uri = process.env.ATLAS_URI;
 
 app.listen(port, (req, res) => {
   console.log("listening on port", port);
-});
-
-app.get("/", (req, res) => {
-  res.send("Welcome to the Channel");
 });
 
 mongoose
