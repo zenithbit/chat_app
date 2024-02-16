@@ -3,6 +3,7 @@ const { Server } = require("socket.io");
 const io = new Server({ cors: "http://127.0.0.1:5173/" });
 
 let onlineUsers = [];
+// let trueUsers = [];
 
 io.on("connection", (socket) => {
   socket.on("addNewUser", (userId) => {

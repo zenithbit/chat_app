@@ -44,6 +44,7 @@ export const AuthContextProvider = ({ children }) => {
       );
 
       setIsRegisterLoading(false);
+      console.log("Register");
 
       if (response.error) return setRegisterError(response);
 

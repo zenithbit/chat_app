@@ -20,7 +20,7 @@ const port = process.env.PORT || 2002;
 const uri = process.env.ATLAS_URI;
 
 app.listen(port, (req, res) => {
-  console.log("listening on port", port);
+  console.log("listening on port: ", port);
 });
 
 mongoose
